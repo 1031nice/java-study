@@ -5,12 +5,14 @@ import java.util.Map;
 public class Test {
 
     public static void main(String[] args) {
+        int [][][] arr = new int [3][][2];
+
 //        int [][] input = {{0,0,1,1},{1,1,1,1},{2,2,2,1},{0,0,0,2}};
-        int [][] input = {{0, 0, 1}, {2, 2, 1}, {0, 0, 0}};
-        int[] solution = Solution.solution(input);
-        for(int i=0; i<solution.length; i++){
-            System.out.print(" " + solution[i]);
-        }
+//        int [][] input = {{0, 0, 1}, {2, 2, 1}, {0, 0, 0}};
+//        int[] solution = Solution.solution(input);
+//        for(int i=0; i<solution.length; i++){
+//            System.out.print(" " + solution[i]);
+//        }
 //        String str = "abc";
 //        str = str + "gerf";
 //        System.out.println(str);
