@@ -64,6 +64,7 @@ public class FilePathStudyTest {
     @Test
     public void list() {
         File dir = new File("./src/main/java");
+        System.out.println(dir.toURI().toString());
         if(dir.isDirectory()) { // File이 directory가 아닐 경우 null을 리턴
             Arrays.stream(dir.list()).forEach(System.out::println);
         }
