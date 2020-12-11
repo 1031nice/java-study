@@ -7,18 +7,15 @@ public class Test {
 
     public static void main(String[] args) {
 
-        int [] arr = {1, 2, 3};
-        int index = 0;
-        arr[index++] += 1;
-        System.out.println(Arrays.toString(arr)); // [1, 0, 0]
-        System.out.println(index); // 1
-
-        int [] arr2 = {1, 2, 3};
-        index = 0;
-        arr2[index++] = arr2[index++] + 1; // 왼쪽 피연산자의 ++부터 수행
-        System.out.println(Arrays.toString(arr2)); // [3, 2, 3]
-        System.out.println(index); // 2
-
+        double inf = 1.0/0.0;
+        double neginf = -1.0/0.0;
+        double negzero = -1.0/inf;
+        double NaN = 0.0/0.0;
+        System.out.println(-0.0);
+        System.out.println(inf);
+        System.out.println(neginf);
+        System.out.println(negzero);
+        System.out.println(NaN);
 
 //        int [][] input = {{0,0,1,1},{1,1,1,1},{2,2,2,1},{0,0,0,2}};
 //        int [][] input = {{0, 0, 1}, {2, 2, 1}, {0, 0, 0}};
