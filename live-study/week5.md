@@ -104,7 +104,7 @@ c1.area();
 ```java
 public class Circle {
     protected double r; // 반지름
-    public Circle(double radius) { this.r = radius; } // 생성자(반지름 초기화)
+    public Circle(double radius) { r = radius; } // r에 접근할 때 this 생략 가능
 }
 ```
 
