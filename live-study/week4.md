@@ -220,3 +220,5 @@ for(int i = 0; i < data.length; i++) { // Loop through data.
 ### 테스트 코드
 - [수동 테스트](../src/main/java/liveStudy/Test.java)
 - [Junit4](../src/test/java/MyCollectionTest.java)
+
+참고: Java in a Nutshell 7th

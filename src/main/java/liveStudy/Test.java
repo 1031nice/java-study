@@ -10,6 +10,7 @@ import liveStudy.stack.MyStackWithArray;
 import liveStudy.stack.MyStackWithLinkedList;
 
 public class Test {
+
     public static void main(String[] args) {
         MyLinkedList list = new MyLinkedList();
 
