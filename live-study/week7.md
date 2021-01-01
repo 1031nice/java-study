@@ -65,8 +65,7 @@ import 했어도, java.util.zip.ZipInputStream 클래스를 사용할 때는
 패키지 이름을 포함한 fully qualifed name을 사용해야 한다.
 <br> 참고 2. 패키지의 모든 클래스에 대해 single type import로 하나하나 import한 것과
 on-demand type import한 것은 다르다. 엄밀히 얘기해서 on-demand type import는 해당 패키지의 모든 클래스를
-패키지 이름 없이 바로 참조할 수 있다는 것일 뿐 실제로 import 하는 것은
-이름에서 알 수 있듯 코드에서 쓴 클래스들만 import한다.
+패키지 이름 없이 바로 참조할 수 있다는 것일 뿐 실제로 import 하는 것은 이름에서 알 수 있듯 코드에서 쓴 클래스이다.
  
 ### classpath
 자바 파일은 클래스 파일로 컴파일된다. JVM은 클래스 파일을 읽고 명령을 수행한다.
@@ -81,7 +80,7 @@ com/davidflanagan/examples/의 경로를 따라 Point.class 파일을 찾는다.
 <br> (1) JVM을 구동시키는 실행 파일
 <br> (2) 클래스 파일위치를 명시할 때 쓰는 옵션
 <br> (3) 클래스 파일의 위치
-<br> (4) 실행시킬(main 메소드를 가진) 클래스의 fully qualified 이름
+<br> (4) 실행시킬(main 메소드를 가진) 클래스의 fully qualified name
 
 2. CLASSPATH 환경변수를 설정한다.
 <br> 클래스패스란 클래스 파일이 위치한 경로라고 한다. 그런데 여태까지 설정한 CLASSPATH는 jdk 폴더의 bin 폴더였다.
@@ -101,7 +100,7 @@ com/davidflanagan/examples/의 경로를 따라 Point.class 파일을 찾는다.
 
 엄격한 정도는 `private`, package-private, `protected`, `public` 순이다.
 `protected`가 가장 헷갈리기 쉬운 것 같다. 오직 자식 클래스에서만 접근할 수 있다는 뜻이 아니라
-다른 패키지 속 클래스라도 자식 클래스여야만 접근할 수 있다는 뜻이다. (같은 패키지라면 자식 클래스가 아니더라도 접근할 수 있다.)
+다른 패키지 속 클래스라도 자식 클래스라면 접근할 수 있다는 뜻이다. (같은 패키지라면 자식 클래스가 아니더라도 접근할 수 있다.)
 즉, `protected`는 부모 자식 관계로 '제한'을 두는 것이라기 보다는
 부모 자식 관계는 추가적으로 접근을 '허용'해주는 것으로 보는 것이 맞는 것 같다.
 다시 말해, access modifier를 붙이지 않는 것이(package-private) `protected`를 붙이는 것보다 더 엄격한 제한이며
