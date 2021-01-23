@@ -29,7 +29,8 @@
 `Thread` 인스턴스를 만들 때는 쓰레드에서 동작될 코드를 반드시 제공해야 하는데 여기에는 두 가지 방법이 있다.
 
 1. `Runnable` 오브젝트 이용
-`Runnable` 인터페이스는 run()이라는 하나의 메소드를 정의하는데 이 메소드가 바로 쓰레드에서 동작될 메소드이다.
+
+`Runnable` 인터페이스는 `run()`이라는 하나의 메소드를 정의하는데 이 메소드가 바로 쓰레드에서 동작될 메소드이다.
 다음과 같이 `Runnable` 객체를 `Thread` 생성자의 인자로 전달함으로써 쓰레드에서 동작될 코드를 제공할 수 있다.
 ```java
 public class HelloRunnable implements Runnable {
@@ -46,8 +47,9 @@ public class HelloRunnable implements Runnable {
 ```
 
 2. `Thread`의 자식 클래스 이용
-`Thread` 클래스는 `Runnable` 인터페이스를 구현하고 있다. 그러나 `Thread` 클래스의 run() 메소드는
-아무 의미가 없기 때문에 `Thread`를 상속받는 자식 클래스를 만든 뒤 run() 메소드를 오버라이드함으로써 쓰레드에서 동작될 코드를 제공할 수 있다.
+
+`Thread` 클래스는 `Runnable` 인터페이스를 구현하고 있다. 그러나 `Thread` 클래스의 `run()` 메소드는
+아무 의미가 없기 때문에 `Thread`를 상속받는 자식 클래스를 만든 뒤 `run()` 메소드를 오버라이드함으로써 쓰레드에서 동작될 코드를 제공할 수 있다.
 ```java
 public class HelloThread extends Thread {
 
@@ -68,7 +70,7 @@ public class HelloThread extends Thread {
 더 유연할 뿐 아니라 high-level 쓰레드 관리 API에 적용될 수 있는 방식이기 때문이다.
 
 #### 메인 쓰레드
-자바 프로그램이 실행되는 과정(쓰레드 관점)
+자바 프로그램이 실행되는 과정
 1. 프로그래머가 특정 클래스를 실행시킨다.
 2. JVM(모든 자바 프로그램이 실행되는 컨텍스트)이 구동된다.
 3. JVM은 전달된 인자를 확인하고 프로그래머가 엔트리 포인트(특정 클래스의 main 메소드)에서 시작되는 실행을 요청했는지 확인한다.
@@ -79,15 +81,15 @@ public class HelloThread extends Thread {
 메인 쓰레드란 프로그램의 실행을 위해 지정된 쓰레드로, 프로그램이 실행되면 실행된다. 
 
 #### 쓰레드 상태
-getState()를 통해 쓰레드의 상태를 확인할 수 있다.
+`getState()`를 통해 쓰레드의 상태를 확인할 수 있다.
 자바에서는 `Thread.State` 이늄을 통해 쓰레드의 상태를 표현하기 때문에
-getState()는 `Thread.State` 타입을 객체를 리턴한다.
+`getState()`는 `Thread.State` 타입을 객체를 리턴한다.
 
-* NEW: 쓰레드가 생성되었으나 start() 메소드가 호출되지 않은 상태(모든 쓰레드의 시작 상태).
+* NEW: 쓰레드가 생성되었으나 `start()` 메소드가 호출되지 않은 상태(모든 쓰레드의 시작 상태).
 * RUNNABLE: 쓰레드가 실행중이거나 운영체제가 스케줄링하는 시점에서 이용가능한 상태.
 * BLOCKED: `synchronized` 메소드나 블럭에 진입하고자 락을 얻기 위해 대기하는 상태.
-* WAITING: Object.wait() 메소드나 Thread.join() 메소드에 의해 멈춰있는 상태.
-* TIMED_WAITING: Thread.sleep() 메소드나 Object.wait(), Thread.join() 메소드가 타임아웃 값과 함께 호출되어,
+* WAITING: `Object.wait()` 메소드나 `Thread.join()` 메소드에 의해 멈춰있는 상태.
+* TIMED_WAITING: `Thread.sleep()` 메소드나 `Object.wait()`, `Thread.join()` 메소드가 타임아웃 값과 함께 호출되어,
 무한히 기다리는 것이 아니라 시그널이 오지 않더라도 일정 시간 동안만 멈춰있는 상태.
 * TERMINATED: 쓰레드의 실행이 완료된 상태.
 
@@ -95,7 +97,7 @@ getState()는 `Thread.State` 타입을 객체를 리턴한다.
 <br>출처: Java in a Nutshell 7th 
 
 #### 쓰레드 우선순위
-getPriority()와 setPriority를 통해 쓰레드의 우선순위를 관리할 수 있다.
+`getPriority()`와 `setPriority()`를 통해 쓰레드의 우선순위를 관리할 수 있다.
 스케줄러는 쓰레드 우선순위를 어떻게 처리할 것인기 결정한다.
 쓰레드 우선순위를 처리하는 한 가지 방식은 높은 우선순위의 쓰레드가 기다리고 있을 때
 낮은 우선순위의 쓰레드가 실행되지 못하도록 하는 것이다.
@@ -216,7 +218,7 @@ Reentrant synchronization이란 `synchronized` 코드가 직/간접적으로
 쓰레드가 같은 락을 한 번 이상 획득할 수 있게하면 reentrant synchronization이 가능하다.
 
 #### Deadlock
-데드락은 둘 이상의 쓰레드가 상대방을 기다리며 영원히 블락된 상태를 의미한다.
+Deadlock은 둘 이상의 쓰레드가 상대방을 기다리며 영원히 블락된 상태를 의미한다.
 
 ![](deadlock.jpeg)
 <br>출처: https://medium.com/@abhishekdesilva/avoiding-deadlocks-and-performance-tuning-for-mssql-with-wso2-servers-c0014affd1e
@@ -249,6 +251,6 @@ A는 B가 지나가도록 왼쪽으로 움직이고, B는 A가 지나가도록 �
 A는 B가 지나가도록 다시 오른쪽으로 가고, B는 A가 지나가도록 다시 왼쪽으로 움직여서 서로를 또 가로막고
 이를 계속 반복하는 상황이 livelock이다. 둘 모두 움직이고는 있지만 앞으로 나아가지 못한다.
 
-#### 참고
+### 참고
 [오라클 자바 튜토리얼 문서](https://docs.oracle.com/javase/tutorial/essential/concurrency/runthread.html)
 <br>Java in a Nutshell 7th
