@@ -20,6 +20,7 @@ public class Test {
         System.out.println(new C().getClass().getAnnotation(UninheritedAnnotationType.class));
     }
 }
+
 @UninheritedAnnotationType
 class A {}
 
