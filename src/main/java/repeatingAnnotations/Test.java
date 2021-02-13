@@ -24,7 +24,7 @@ public class Test {
 @UninheritedAnnotationType
 class A {}
 
-@InheritedAnnotationType
+//@InheritedAnnotationType
 class B extends A {}
 
 class C extends B {}

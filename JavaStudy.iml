@@ -15,6 +15,8 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.opentest4j:opentest4j:1.2.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-commons:1.6.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.poi:poi:3.9" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.5" level="project" />
     <orderEntry type="library" name="Maven: org.assertj:assertj-core:3.16.1" level="project" />
     <orderEntry type="library" name="Maven: org.kohsuke:github-api:1.117" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.9" level="project" />
