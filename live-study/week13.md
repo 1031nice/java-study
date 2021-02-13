@@ -175,9 +175,6 @@ Arrays.stream(lines.toArray[new String[0]]).forEach(System.out::println);
 `Files.write(Paths.get(path), text.getBytes());`
 
 ### 참고
-자바 공식 문서
-https://docs.oracle.com/javase/tutorial/essential/io/index.html
-스탠다드 IO
-http://journals.ecs.soton.ac.uk/java/tutorial/java/system/iostreams.html
-채널 IO 스트림 IO 비교
-https://medium.com/@nilasini/java-nio-non-blocking-io-vs-io-1731caa910a2
+[자바 입출력 관련 공식 문서](https://docs.oracle.com/javase/tutorial/essential/io/index.html)
+<br>[스탠다드 IO](http://journals.ecs.soton.ac.uk/java/tutorial/java/system/iostreams.html)
+<br>[채널 IO 스트림 IO 비교](https://medium.com/@nilasini/java-nio-non-blocking-io-vs-io-1731caa910a2)
