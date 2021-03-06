@@ -1,4 +1,4 @@
-## 13주차 live-study 목차
+## 14주차 live-study 목차
 - [제네릭 등장 배경](#제네릭-등장-배경)
 - [제네릭](#제네릭)
 - [Type Parameter](#Type-Parameter)
